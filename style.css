@@ -620,8 +620,13 @@ p {
 .partner-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-4);
+  gap: 1px;
   margin-top: var(--space-8);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--border);
+  box-shadow: var(--shadow-sm);
 }
 
 .partner-logo {
@@ -629,30 +634,18 @@ p {
   min-height: 8.25rem;
   place-items: center;
   padding: var(--space-6);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
   background: #ffffff;
-  box-shadow: var(--shadow-sm);
-  transition:
-    transform 180ms var(--ease),
-    border-color 180ms var(--ease),
-    box-shadow 180ms var(--ease);
+  transition: background 180ms var(--ease);
 }
 
 .partner-logo:hover {
-  transform: translateY(-3px);
-  border-color: var(--border-strong);
-  box-shadow: var(--shadow-md);
+  background: #f8fbfc;
 }
 
 .partner-logo img {
-  width: min(100%, 16rem);
-  max-height: 4.2rem;
+  width: min(100%, 17rem);
+  max-height: 4.6rem;
   object-fit: contain;
-}
-
-.partner-logo:nth-child(2) img {
-  max-height: 5.6rem;
 }
 
 .join-card {
