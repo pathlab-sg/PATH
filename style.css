@@ -371,6 +371,10 @@ p {
   background: #f8fbfc;
 }
 
+#partners {
+  background: #ffffff;
+}
+
 #team {
   background: #ffffff;
 }
@@ -449,6 +453,23 @@ p {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.team-grid--core {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.team-section + .team-section {
+  margin-top: var(--space-10);
+}
+
+.team-subhead {
+  margin-bottom: var(--space-5);
+  color: var(--text-soft);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .join-roles {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -477,6 +498,10 @@ p {
 .card h3,
 .profile-card h3 {
   margin-bottom: var(--space-3);
+}
+
+.profile-card h3 {
+  overflow-wrap: anywhere;
 }
 
 .card h3 {
@@ -590,6 +615,44 @@ p {
 
 .join-intro {
   margin-bottom: var(--space-8);
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.partner-logo {
+  display: grid;
+  min-height: 8.25rem;
+  place-items: center;
+  padding: var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 180ms var(--ease),
+    border-color 180ms var(--ease),
+    box-shadow 180ms var(--ease);
+}
+
+.partner-logo:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.partner-logo img {
+  width: min(100%, 16rem);
+  max-height: 4.2rem;
+  object-fit: contain;
+}
+
+.partner-logo:nth-child(2) img {
+  max-height: 5.6rem;
 }
 
 .join-card {
@@ -959,7 +1022,8 @@ body.modal-open {
 @media (max-width: 1020px) {
   .card-grid,
   .team-grid,
-  .join-roles {
+  .join-roles,
+  .partner-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1072,7 +1136,8 @@ body.modal-open {
 
   .card-grid,
   .team-grid,
-  .join-roles {
+  .join-roles,
+  .partner-grid {
     grid-template-columns: 1fr;
     gap: var(--space-4);
   }
@@ -1088,6 +1153,11 @@ body.modal-open {
   .avatar-placeholder {
     width: 4rem;
     height: 4rem;
+  }
+
+  .partner-logo {
+    min-height: 7.2rem;
+    padding: var(--space-5);
   }
 
   .join-collaborate .btn,
