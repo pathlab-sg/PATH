@@ -372,7 +372,10 @@ p {
 }
 
 #partners {
-  background: #ffffff;
+  background:
+    linear-gradient(180deg, rgba(239, 246, 249, 0.96), rgba(247, 251, 252, 0.98)),
+    var(--bg-2);
+  border-block: 1px solid rgba(37, 75, 95, 0.1);
 }
 
 #team {
